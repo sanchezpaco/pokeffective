@@ -1,0 +1,92 @@
+[
+  {
+    "key": "Normal",
+    "text": "Normal",
+    "value": "Normal"
+  },
+  {
+    "key": "Fighting",
+    "text": "Fighting",
+    "value": "Fighting"
+  },
+  {
+    "key": "Flying",
+    "text": "Flying",
+    "value": "Flying"
+  },
+  {
+    "key": "Poison",
+    "text": "Poison",
+    "value": "Poison"
+  },
+  {
+    "key": "Ground",
+    "text": "Ground",
+    "value": "Ground"
+  },
+  {
+    "key": "Rock",
+    "text": "Rock",
+    "value": "Rock"
+  },
+  {
+    "key": "Bug",
+    "text": "Bug",
+    "value": "Bug"
+  },
+  {
+    "key": "Ghost",
+    "text": "Ghost",
+    "value": "Ghost"
+  },
+  {
+    "key": "Steel",
+    "text": "Steel",
+    "value": "Steel"
+  },
+  {
+    "key": "Fire",
+    "text": "Fire",
+    "value": "Fire"
+  },
+  {
+    "key": "Water",
+    "text": "Water",
+    "value": "Water"
+  },
+  {
+    "key": "Grass",
+    "text": "Grass",
+    "value": "Grass"
+  },
+  {
+    "key": "Electric",
+    "text": "Electric",
+    "value": "Electric"
+  },
+  {
+    "key": "Psychic",
+    "text": "Psychic",
+    "value": "Psychic"
+  },
+  {
+    "key": "Ice",
+    "text": "Ice",
+    "value": "Ice"
+  },
+  {
+    "key": "Dragon",
+    "text": "Dragon",
+    "value": "Dragon"
+  },
+  {
+    "key": "Dark",
+    "text": "Dark",
+    "value": "Dark"
+  },
+  {
+    "key": "Fairy",
+    "text": "Fairy",
+    "value": "Fairy"
+  }
+]
