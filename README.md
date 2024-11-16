@@ -1,5 +1,12 @@
 # Pokeffective
 
+[![CI](https://github.com/sanchezpaco/pokeffective/actions/workflows/ci.yml/badge.svg)](https://github.com/sanchezpaco/pokeffective/actions/workflows/ci.yml)
+[![Coverage Status](https://img.shields.io/badge/coverage-85%25-brightgreen.svg)](https://github.com/sanchezpaco/pokeffective/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-18.3-blue.svg)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.4-646CFF.svg)](https://vitejs.dev/)
+
 ![Pokeffective](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png)
 
 A modern, responsive Pokémon type effectiveness calculator built with React and TypeScript. Instantly calculate type advantages and weaknesses for all Pokémon.
@@ -9,7 +16,7 @@ A modern, responsive Pokémon type effectiveness calculator built with React and
 - 🎯 **Type Effectiveness Calculator**: Calculate damage multipliers for any attack type against any Pokémon
 - 🔄 **Real-time Updates**: Instant feedback as you select different types and Pokémon
 - 📱 **Responsive Design**: Works seamlessly on mobile, tablet, and desktop devices
-- ⚡ **Performance Optimized**: 
+- ⚡ **Performance Optimized**:
   - Local caching of Pokémon data
   - Progressive loading of Pokémon sprites
   - Optimized bundle size with code splitting
