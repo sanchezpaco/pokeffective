@@ -9,7 +9,11 @@
 
 ![Pokeffective](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png)
 
-A modern, responsive Pokémon type effectiveness calculator built with React and TypeScript. Instantly calculate type advantages and weaknesses for all Pokémon.
+Hi!
+
+This has been a playground project enterily made by Bolt.new, I wanted to know what things could be done with AI and here is a simple project, hope you like it.
+
+Pokeffective is a modern, responsive Pokémon type effectiveness calculator built with React and TypeScript. Instantly calculate type advantages and weaknesses for all Pokémon.
 
 ## Features
 
@@ -157,6 +161,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 - [PokéAPI](https://pokeapi.co/) for Pokémon data
 - [PokeAPI/sprites](https://github.com/PokeAPI/sprites) for Pokémon sprites
+- [Bolt.new](https://bolt.new) AI that has done all the code of the project 
 
 ## CI/CD Pipeline
 
