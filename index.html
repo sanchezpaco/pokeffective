@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Pokeffective - The ultimate Pokémon type effectiveness calculator" />
+    <meta name="theme-color" content="#EC4899" />
+    <title>Pokeffective - Type Effectiveness Calculator</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://raw.githubusercontent.com" />
+    <link rel="preconnect" href="https://pokeapi.co" />
+    
+    <!-- PWA meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Critical CSS -->
+    <style>
+      .gradient-container {
+        background: linear-gradient(135deg, rgb(239, 68, 68) 0%, rgb(255, 255, 255) 100%);
+      }
+      .pixelated {
+        image-rendering: pixelated;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  </body>
+</html>
