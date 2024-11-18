@@ -31,6 +31,8 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    console.log(loading)
+    console.log(pokemon.length)
     if (!loading && pokemon.length > 0) {
       const timer = setTimeout(() => {
         setContentReady(true);

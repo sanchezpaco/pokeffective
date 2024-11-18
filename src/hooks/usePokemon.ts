@@ -59,30 +59,14 @@ export const usePokemon = () => {
         // Check cache first
         const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
-          const { timestamp, pokemon: cachedPokemon, lastProcessedIndex } = JSON.parse(cachedData) as CacheData;
+          const { timestamp, pokemon: cachedPokemon } = JSON.parse(cachedData) as CacheData;
           
-          if (Date.now() - timestamp < CACHE_DURATION) {
+          if (Date.now() - timestamp < CACHE_DURATION && cachedPokemon.length > 0) {
             setPokemon(cachedPokemon);
             setLoading(false);
             setProgress(100);
 
-            // Continue loading remaining Pokemon in the background if needed
-            if (lastProcessedIndex < 1500) {
-              const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1500');
-              const urls = response.data.results.map((p: { url: string }) => p.url);
-              
-              for (let i = lastProcessedIndex; i < urls.length; i += SUBSEQUENT_BATCH_SIZE) {
-                const newBatch = await fetchPokemonBatch(urls, SUBSEQUENT_BATCH_SIZE, i);
-                setPokemon(prev => [...prev, ...newBatch].sort((a, b) => a.id - b.id));
-                
-                // Update cache with new data
-                localStorage.setItem(CACHE_KEY, JSON.stringify({
-                  timestamp: Date.now(),
-                  pokemon: [...cachedPokemon, ...newBatch].sort((a, b) => a.id - b.id),
-                  lastProcessedIndex: i + SUBSEQUENT_BATCH_SIZE
-                }));
-              }
-            }
+            console.log(cachedPokemon)
             return;
           }
         }
@@ -108,8 +92,7 @@ export const usePokemon = () => {
 
         localStorage.setItem(CACHE_KEY, JSON.stringify({
           timestamp: Date.now(),
-          pokemon: pokemon,
-          lastProcessedIndex: 1302 
+          pokemon: pokemon
         }));
 
       } catch (err) {
