@@ -5,7 +5,7 @@ import { Pokemon } from '../types';
 const CACHE_KEY = 'pokeffective-data';
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 const INITIAL_BATCH_SIZE = 20; // Smaller initial batch for faster first render
-const SUBSEQUENT_BATCH_SIZE = 50;
+const SUBSEQUENT_BATCH_SIZE = 100;
 
 interface CacheData {
   timestamp: number;
@@ -32,7 +32,7 @@ export const usePokemon = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
-
+  
   useEffect(() => {
     const processPokemonData = (data: PokemonApiResponse): Pokemon => ({
       id: data.id,
@@ -97,13 +97,6 @@ export const usePokemon = () => {
         setPokemon(initialBatch);
         setProgress((INITIAL_BATCH_SIZE / totalPokemon) * 100);
 
-        // Cache initial batch
-        localStorage.setItem(CACHE_KEY, JSON.stringify({
-          timestamp: Date.now(),
-          pokemon: initialBatch,
-          lastProcessedIndex: INITIAL_BATCH_SIZE
-        }));
-
         // Load remaining Pokemon in larger batches
         setLoading(false); // Allow interaction while loading remaining data
         
@@ -111,15 +104,13 @@ export const usePokemon = () => {
           const newBatch = await fetchPokemonBatch(urls, SUBSEQUENT_BATCH_SIZE, i);
           setPokemon(prev => [...prev, ...newBatch].sort((a, b) => a.id - b.id));
           setProgress((Math.min(i + SUBSEQUENT_BATCH_SIZE, totalPokemon) / totalPokemon) * 100);
-
-          // Update cache with new data
-          const currentPokemon = [...pokemon, ...newBatch].sort((a, b) => a.id - b.id);
-          localStorage.setItem(CACHE_KEY, JSON.stringify({
-            timestamp: Date.now(),
-            pokemon: currentPokemon,
-            lastProcessedIndex: i + SUBSEQUENT_BATCH_SIZE
-          }));
         }
+
+        localStorage.setItem(CACHE_KEY, JSON.stringify({
+          timestamp: Date.now(),
+          pokemon: pokemon,
+          lastProcessedIndex: 1302 
+        }));
 
       } catch (err) {
         setError('Failed to fetch Pokémon data. Please try again later.');
